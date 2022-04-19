@@ -1,8 +1,6 @@
 package homework;
 
-import lesson.Lesson4;
-
-import static lesson.Lesson4.*;
+import static lessons.lesson1to7.Lesson4.*;
 
 public class HW4 {
 

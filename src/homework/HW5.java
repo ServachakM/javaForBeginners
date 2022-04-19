@@ -3,8 +3,8 @@ package homework;
 import java.math.BigDecimal;
 
 import static homework.HW4.*;
-import static lesson.Lesson4.printTaskNumber;
-import static lesson.Lesson5.*;
+import static lessons.lesson1to7.Lesson4.printTaskNumber;
+import static lessons.lesson1to7.Lesson5.*;
 
 public class HW5 {
 
