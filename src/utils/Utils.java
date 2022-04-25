@@ -92,7 +92,7 @@ public class Utils {
 
     public static int randomInt(int upp, int low) {
 
-        return (int)(Math.random() * (upp - low)) + low;
+        return (int)(Math.random() * (upp - low + 1)) + low;
     }
 
     public static double averageArray(int[] array) {
@@ -164,6 +164,25 @@ public class Utils {
         System.out.println("String str = " + a + "\t\t| " + "String str_1 = "
                 + b + "\t\t| "
                 + trueOrFalse);
+    }
+
+    public static int[] multiplicationTable(int a){
+        int count = 0;
+        if(a > 0 && a % 1 == 0 && a < 10) {
+            for (int i = 0; i < 11; i++) {
+                count++;
+            }
+        } else {
+            System.out.println("Введите целое положительные число в пределах" +
+                    " от 1 до 10 исключительно");
+           // return new int[]{};
+        }
+        int [] array = new int[count];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = a * i;
+        }
+
+        return array;
     }
 
 

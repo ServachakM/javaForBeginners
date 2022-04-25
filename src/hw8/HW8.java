@@ -205,13 +205,10 @@ public class HW8 {
             }
         }
         int[] array2 = new int[count];
-        int j = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > 0 && array[i] > min && array[i] < max) {
-                array2[array2.length - count] = array[i];
-//                array2[j] = array[i];
-//                j++;
-                count--;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] > 0 && array[i] > min && array[i] < max) {
+                    array2[array2.length - count] = array[i];
+                    count--;
             }
         }
 
