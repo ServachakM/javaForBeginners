@@ -6,21 +6,19 @@ import static utils.Utils.*;
 
 public class HW8 {
 
-    public static int[] fiveValue(int a1, int a2, int a3, int a4, int a5){
-       int[] array = {a1, a2, a3, a4, a5};
+    public static int[] fiveValue(int a1, int a2, int a3, int a4, int a5) {
+        int[] array = {a1, a2, a3, a4, a5};
 
-       return array;
+        return array;
     }
 
-    public static double[] fiveValue(double a1, double a2, double a3, double a4,
-                                  double a5){
+    public static double[] fiveValue(double a1, double a2, double a3, double a4, double a5) {
         double[] array = {a1, a2, a3, a4, a5};
 
         return array;
     }
 
-    public static String[] fiveValue(String a1, String a2, String a3, String a4,
-                                     String a5){
+    public static String[] fiveValue(String a1, String a2, String a3, String a4, String a5) {
         String[] array = {a1, a2, a3, a4, a5};
 
         return array;
@@ -28,7 +26,7 @@ public class HW8 {
 
     public static double[] arrayMulti(int[] array) {
         double[] array2 = new double[array.length];
-        if(array.length != 0) {
+        if (array.length != 0) {
             for (int i = 0; i < array.length; i++) {
                 array2[i] = array[i] * 2.5;
             }
@@ -39,20 +37,20 @@ public class HW8 {
 
     public static int quantityEvenNumbers(int[] array) {
         int count = 0;
-        if(array.length != 0) {
+        if (array.length != 0) {
             for (int i = 0; i < array.length; i++) {
-                if(array[i] > 0 && array[i] % 2 == 0) {
-                    count ++;
+                if (array[i] > 0 && array[i] % 2 == 0) {
+                    count++;
                 }
             }
         }
         return count;
     }
 
-    public static int[] arrayOdd(int[] array){
+    public static int[] arrayOdd(int[] array) {
         int count = 0;
         int j = 0;
-        if(array.length != 0) {
+        if (array.length != 0) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] % 2 != 0) {
                     count++;
@@ -61,12 +59,12 @@ public class HW8 {
         }
         int[] array2 = new int[count];
 
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] % 2 != 0) {
-                    array2[j] = array[i];
-                    j++;
-                }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                array2[j] = array[i];
+                j++;
             }
+        }
 
         return array2;
     }
@@ -76,14 +74,14 @@ public class HW8 {
         boolean[] array2 = new boolean[array.length];
         if (array.length != 0) {
             for (int i = 0; i < array.length; i++) {
-                if(j < array.length) {
+                if (j < array.length) {
                     if (array[i] > 10) {
                         array2[j] = true;
                     } else {
                         array2[j] = false;
                     }
                 }
-               j++;
+                j++;
             }
         }
 
@@ -102,12 +100,12 @@ public class HW8 {
         return str;
     }
 
-    public static int sumHalfArray(int[] array){
+    public static int sumHalfArray(int[] array) {
         int sum = 0;
         int j;
-        if(array.length != 0){
+        if (array.length != 0) {
             j = array.length / 2;
-            for (int i = j; i <array.length ; i++) {
+            for (int i = j; i < array.length; i++) {
                 sum += array[i];
             }
         } else {
@@ -117,12 +115,12 @@ public class HW8 {
         return sum;
     }
 
-    public static int[] arrayEvenOdd(int[] array){
+    public static int[] arrayEvenOdd(int[] array) {
         int count1 = 0;
         int count2 = 0;
-        if(array.length != 0){
+        if (array.length != 0) {
             for (int i = 0; i < array.length; i++) {
-                if(array[i] % 2 == 0){
+                if (array[i] % 2 == 0) {
                     count1++;
                 } else {
                     count2++;
@@ -133,10 +131,10 @@ public class HW8 {
         int[] array1 = new int[count1];
         int[] array2 = new int[count2];
         int j = 0;
-        if(array1.length > array2.length){
+        if (array1.length > array2.length) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] % 2 == 0) {
-                    if(j < array1.length) {
+                    if (j < array1.length) {
                         array1[j] = array[i];
                         j++;
                     }
@@ -144,25 +142,25 @@ public class HW8 {
 
             }
             return array1;
-        } else if(array1.length < array2.length){
-                  j = 0;
-                   for (int i = 0; i < array.length; i++) {
-                        if (array[i] % 2 != 0) {
-                            if (j < array2.length) {
-                                array2[j] = array[i];
-                                j++;
-                            }
-                        }
-                   }
+        } else if (array1.length < array2.length) {
+            j = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 != 0) {
+                    if (j < array2.length) {
+                        array2[j] = array[i];
+                        j++;
+                    }
+                }
+            }
             return array2;
         } else {
-            return  new int[0];
+            return new int[0];
         }
     }
 
-    public static int[] randomArrayFor0To100(int a, int upp, int low){
+    public static int[] randomArrayFor0To100(int a, int upp, int low) {
         int[] array = new int[a];
-        if(array.length > 0){
+        if (array.length > 0) {
             for (int i = 0; i < array.length; i++) {
                 array[i] = Math.abs(randomInt(upp, low));
             }
@@ -170,9 +168,9 @@ public class HW8 {
         return array;
     }
 
-    public static int[] randomArrayTask19(int l, int d){
+    public static int[] randomArrayTask19(int l, int d) {
         int[] array = new int[l];
-        if(array.length != 0 && d > 0) {
+        if (array.length != 0 && d > 0) {
             for (int i = 0; i < array.length; i++) {
                 if (d == 1) {
                     array[i] = randomInt(10, 0);
@@ -197,30 +195,31 @@ public class HW8 {
         }
         return array;
     }
-    public static int[] arrayTask20(int[] array, int max, int min){
+
+    public static int[] arrayTask20(int[] array, int max, int min) {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
-            if(array[i] > 0 && array[i] > min && array[i] < max){
+            if (array[i] > 0 && array[i] > min && array[i] < max) {
                 count++;
             }
         }
         int[] array2 = new int[count];
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] > 0 && array[i] > min && array[i] < max) {
-                    array2[array2.length - count] = array[i];
-                    count--;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0 && array[i] > min && array[i] < max) {
+                array2[array2.length - count] = array[i];
+                count--;
             }
         }
 
         return array2;
     }
 
-    public static int[] arrayDiffTask21(int [] array){
+    public static int[] arrayDiffTask21(int[] array) {
         int[] array2 = new int[array.length];
         int j = 0;
         if (array.length != 0) {
-            for(int i = 0; i < array.length ; i++) {
-                if(array[i] > 9 && array[i] < 100){
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] > 9 && array[i] < 100) {
                     array2[j] = Math.abs(array[i] / 10 - array[i] % 10);
                     j++;
                 } else {
@@ -232,21 +231,19 @@ public class HW8 {
         return array2;
     }
 
-        public static String[] arrayPhoneNumber(int [] array){
+    public static String[] arrayPhoneNumber(int[] array) {
         String[] array2 = new String[2];
-        if(array.length != 0){
+        if (array.length != 0) {
             for (int i = 0; i < array.length; i++) {
-                if(array[i] >= 0 && array[i] < 10){
-                    array2[0] = array[0] + "(" + array[1] + array[2] + array[3]
-                            + ")" + array[4] + array[5] + array[6] + "-"
-                            + array[7] + array[8] + "-" + array[9] + array[10];
-                    if(array[0] == 1) {
+                if (array[i] >= 0 && array[i] < 10) {
+                    array2[0] = array[0] + "(" + array[1] + array[2] + array[3] + ")" + array[4] + array[5] + array[6] + "-" + array[7] + array[8] + "-" + array[9] + array[10];
+                    if (array[0] == 1) {
                         array2[1] = "USA";
-                    } else if(array[0] == 2) {
+                    } else if (array[0] == 2) {
                         array2[1] = "Australia";
-                    } else if(array[0] == 3) {
+                    } else if (array[0] == 3) {
                         array2[1] = "Zimbabwe";
-                    } else if(array[0] == 4) {
+                    } else if (array[0] == 4) {
                         array2[1] = "Germany";
                     } else {
                         return new String[]{};
@@ -257,14 +254,14 @@ public class HW8 {
         return array2;
     }
 
-    public static int countOfUniElements(int[] array){
+    public static int countOfUniElements(int[] array) {
         int count = 0;
         if (array.length > 0) {
             for (int i = 0; i < array.length; i++) {
                 for (int j = i + 1; j < array.length; j++) {
-                        if (array[i] == array[j]) {
-                            array[j] = 0;
-                        }
+                    if (array[i] == array[j]) {
+                        array[j] = 0;
+                    }
                 }
             }
         } else {
@@ -272,53 +269,50 @@ public class HW8 {
             return count;
         }
         for (int i = 0; i < array.length; i++) {
-            if(array[i] == 0){
+            if (array[i] == 0) {
                 count++;
             }
         }
-      return count;
+        return count;
     }
 
     public static int[] arrayUniNumber(int[] array) {
         int[] array2 = new int[array.length - (countOfUniElements(array))];
-            int count = 0;
-            for (int i = 0; count < array2.length && i < array.length; i++) {
-                if (array[i] != 0) {
-                    array2[count] = array[i];
-                    count++;
-                    }
-                }
-            return array2;
+        int count = 0;
+        for (int i = 0; count < array2.length && i < array.length; i++) {
+            if (array[i] != 0) {
+                array2[count] = array[i];
+                count++;
+            }
         }
+        return array2;
+    }
 
 
-        public static int[] quantityUniAndNotUniElements(int[] array){
+    public static int[] quantityUniAndNotUniElements(int[] array) {
         int[] array2 = new int[2];
-        if(array.length > 0){
+        if (array.length > 0) {
             array2[0] = array.length - countOfUniElements(array);
             array2[1] = countOfUniElements(array);
 
-        }else{
+        } else {
             return new int[]{};
         }
         return array2;
-        }
-
-
-
+    }
 
 
     private static int[] task23(int[] array) {
-        int [] arrayToReturn = new int[0];
+        int[] arrayToReturn = new int[0];
 
-        if(array.length > 0){
+        if (array.length > 0) {
             int count = 1;
             boolean notTheSame = false;
-            for (int i = 0; i < array.length; i++){
+            for (int i = 0; i < array.length; i++) {
                 int valueToCompare = array[i];
 
-                for (int j = 0; j < array.length; j++){
-                    if(valueToCompare == array[j]){
+                for (int j = 0; j < array.length; j++) {
+                    if (valueToCompare == array[j]) {
 
                         count++;
                     }
@@ -341,10 +335,10 @@ public class HW8 {
         return arrayToReturn;
     }
 
-    private static int [] task25(int[] array, int first, int second) {
+    private static int[] task25(int[] array, int first, int second) {
 
         int[] arrayToReturn = new int[(second - first + 1)];
-        if(second >= 0 && first >= 0) {
+        if (second >= 0 && first >= 0) {
             if (second < array.length && array.length > 0) {
                 int j = 0;
 
@@ -361,18 +355,17 @@ public class HW8 {
         return arrayToReturn;
     }
 
-    public static int[] arrayUniElementsFromTwoArrays(int[] array, int[] array2){
-        if(array.length > 0 || array2.length > 0){
+    public static int[] arrayUniElementsFromTwoArrays(int[] array, int[] array2) {
+        if (array.length > 0 || array2.length > 0) {
             int[] array3 = new int[array.length + array2.length];
             for (int i = 0; i < array.length; i++) {
                 array3[i] = array[i];
             }
             for (int i = 0; i < array2.length; i++) {
-               array3[array.length + i] = array2[i];
+                array3[array.length + i] = array2[i];
             }
             return arrayUniNumber(array3);
-        } else
-        return new int[]{};
+        } else return new int[]{};
     }
 
 
@@ -398,11 +391,11 @@ public class HW8 {
         line();
         table3ColumnsHeader("HW8", "HW8_1", "areEquals?");
         line();
-        table3Columns(a, HW8_1.a_1,compare2Value(a, HW8_1.a_1));
+        table3Columns(a, HW8_1.a_1, compare2Value(a, HW8_1.a_1));
         line();
-        table3Columns(d,HW8_1.d_1, compare2Value(5.5,5.5));
+        table3Columns(d, HW8_1.d_1, compare2Value(5.5, 5.5));
         line();
-        table3Columns("Rabbit", "Rabbit", compare2Value(str,HW8_1.str_1) );
+        table3Columns("Rabbit", "Rabbit", compare2Value(str, HW8_1.str_1));
         line();
 
         /** Task 7
@@ -411,8 +404,8 @@ public class HW8 {
          */
         printTaskNumber(7);
 
-        System.out.println(Arrays.toString(fiveValue(5,4,8,7,3)));
-        System.out.println(Arrays.toString(fiveValue(1.5,2,4,8,9)));
+        System.out.println(Arrays.toString(fiveValue(5, 4, 8, 7, 3)));
+        System.out.println(Arrays.toString(fiveValue(1.5, 2, 4, 8, 9)));
 
 
         /** Task 8
@@ -421,7 +414,7 @@ public class HW8 {
          */
         printTaskNumber(8);
 
-        System.out.println(Arrays.toString(fiveValue(1.5,2.3,5.5,4.7,6.6)));
+        System.out.println(Arrays.toString(fiveValue(1.5, 2.3, 5.5, 4.7, 6.6)));
 
 
         /** Task 9
@@ -430,8 +423,7 @@ public class HW8 {
          */
         printTaskNumber(9);
 
-        System.out.println(Arrays.toString(fiveValue("hv","tt","yy",
-                "dd","tt")));
+        System.out.println(Arrays.toString(fiveValue("hv", "tt", "yy", "dd", "tt")));
 
 
         /** Task 10
@@ -440,8 +432,8 @@ public class HW8 {
          */
         printTaskNumber(10);
 
-        System.out.println(Arrays.toString(arrayMulti(new int[]{1,2,5,4,3,8,1})));
-        System.out.println(Arrays.toString(arrayMulti(new int[]{1,1,5,5,3,3})));
+        System.out.println(Arrays.toString(arrayMulti(new int[]{1, 2, 5, 4, 3, 8, 1})));
+        System.out.println(Arrays.toString(arrayMulti(new int[]{1, 1, 5, 5, 3, 3})));
         System.out.println(Arrays.toString(arrayMulti(new int[0])));
 
 
@@ -452,9 +444,9 @@ public class HW8 {
          */
         printTaskNumber(11);
 
-        System.out.println(quantityEvenNumbers(new int[]{1,2,3,4,5,6}));
+        System.out.println(quantityEvenNumbers(new int[]{1, 2, 3, 4, 5, 6}));
 
-        System.out.println(quantityEvenNumbers(new int[]{0,0,0,0,0}));
+        System.out.println(quantityEvenNumbers(new int[]{0, 0, 0, 0, 0}));
         System.out.println(quantityEvenNumbers(new int[]{-1, -5, -6, -8}));
         System.out.println(quantityEvenNumbers(new int[0]));
 
@@ -465,9 +457,9 @@ public class HW8 {
          */
         printTaskNumber(12);
 
-        System.out.println(Arrays.toString(arrayOdd(new int[]{1,5,3,4,7,9,1})));
+        System.out.println(Arrays.toString(arrayOdd(new int[]{1, 5, 3, 4, 7, 9, 1})));
         System.out.println(Arrays.toString(arrayOdd(new int[]{})));
-        System.out.println(Arrays.toString(arrayOdd(new int[]{2,4,2,6,4})));
+        System.out.println(Arrays.toString(arrayOdd(new int[]{2, 4, 2, 6, 4})));
 
 
         /** Task 13
@@ -476,7 +468,7 @@ public class HW8 {
          */
         printTaskNumber(13);
 
-        System.out.println(Arrays.toString(arrayNumberGreater10(new int[]{1,10,11,14,55,2})));
+        System.out.println(Arrays.toString(arrayNumberGreater10(new int[]{1, 10, 11, 14, 55, 2})));
         System.out.println(Arrays.toString(arrayNumberGreater10(new int[]{})));
 
         /** Task 14
@@ -485,8 +477,7 @@ public class HW8 {
          */
         printTaskNumber(14);
 
-        System.out.println(arrayWords(new String[]{"I","love","Ukraine"}));
-
+        System.out.println(arrayWords(new String[]{"I", "love", "Ukraine"}));
 
 
         /** Task 15
@@ -495,13 +486,11 @@ public class HW8 {
          */
         printTaskNumber(15);
 
-        System.out.println(sumHalfArray(new int[]{1,2,3,4,5}));
-        System.out.println(sumHalfArray(new int[]{1,2,3,4,5,1}));
+        System.out.println(sumHalfArray(new int[]{1, 2, 3, 4, 5}));
+        System.out.println(sumHalfArray(new int[]{1, 2, 3, 4, 5, 1}));
         System.out.println(sumHalfArray(new int[]{}));
-        System.out.println(sumHalfArray(new int[]{-2,-3,-4,-1,3,-2}));
-        System.out.println(sumHalfArray(new int[]{-2,-3,-4,-1,-3,-2}));
-
-
+        System.out.println(sumHalfArray(new int[]{-2, -3, -4, -1, 3, -2}));
+        System.out.println(sumHalfArray(new int[]{-2, -3, -4, -1, -3, -2}));
 
 
         /** Task 16
@@ -525,9 +514,9 @@ public class HW8 {
          */
         printTaskNumber(17);
 
-        System.out.println(Arrays.toString(arrayEvenOdd(new int[]{1,2,3,4,5})));
-        System.out.println(Arrays.toString(arrayEvenOdd(new int[]{1,2,3,4,5,6})));
-        System.out.println(Arrays.toString(arrayEvenOdd(new int[]{1,2,3,4,5,6,8})));
+        System.out.println(Arrays.toString(arrayEvenOdd(new int[]{1, 2, 3, 4, 5})));
+        System.out.println(Arrays.toString(arrayEvenOdd(new int[]{1, 2, 3, 4, 5, 6})));
+        System.out.println(Arrays.toString(arrayEvenOdd(new int[]{1, 2, 3, 4, 5, 6, 8})));
 
 
         /** Task 18
@@ -536,10 +525,9 @@ public class HW8 {
          */
         printTaskNumber(18);
 
-        System.out.println(Arrays.toString(randomArrayFor0To100(8,99,1)));
-        System.out.println(Arrays.toString(randomArrayFor0To100(30,99,1)));
-        System.out.println(Arrays.toString(randomArrayFor0To100(0,99,0)));
-
+        System.out.println(Arrays.toString(randomArrayFor0To100(8, 99, 1)));
+        System.out.println(Arrays.toString(randomArrayFor0To100(30, 99, 1)));
+        System.out.println(Arrays.toString(randomArrayFor0To100(0, 99, 0)));
 
 
         /** Task 19
@@ -550,11 +538,11 @@ public class HW8 {
          */
         printTaskNumber(19);
 
-        System.out.println(Arrays.toString(randomArrayTask19(20, 2 )));
-        System.out.println(Arrays.toString(randomArrayTask19(5, 3 )));
-        System.out.println(Arrays.toString(randomArrayTask19(10, 4 )));
-        System.out.println(Arrays.toString(randomArrayTask19(5, 6 )));
-        System.out.println(Arrays.toString(randomArrayTask19(3, 9 )));
+        System.out.println(Arrays.toString(randomArrayTask19(20, 2)));
+        System.out.println(Arrays.toString(randomArrayTask19(5, 3)));
+        System.out.println(Arrays.toString(randomArrayTask19(10, 4)));
+        System.out.println(Arrays.toString(randomArrayTask19(5, 6)));
+        System.out.println(Arrays.toString(randomArrayTask19(3, 9)));
 
 
         /** Task 20
@@ -564,13 +552,11 @@ public class HW8 {
          */
         printTaskNumber(20);
 
-        System.out.println(Arrays.toString(arrayTask20(new int[]{2,4,5,3,1,20,7,80}, 100, 9)));
-        System.out.println(
-                Arrays.toString(arrayTask20(randomArrayFor0To100(9, 100, 0),100,9)));
-        System.out.println(
-                Arrays.toString(arrayTask20(randomArrayFor0To100(9, 50, 0),100,9)));
+        System.out.println(Arrays.toString(arrayTask20(new int[]{2, 4, 5, 3, 1, 20, 7, 80}, 100, 9)));
+        System.out.println(Arrays.toString(arrayTask20(randomArrayFor0To100(9, 100, 0), 100, 9)));
+        System.out.println(Arrays.toString(arrayTask20(randomArrayFor0To100(9, 50, 0), 100, 9)));
 
-        System.out.println(Arrays.toString(arrayTask20(new int[]{123,9,4,789,5,12,698,0}, 1000, 100)));
+        System.out.println(Arrays.toString(arrayTask20(new int[]{123, 9, 4, 789, 5, 12, 698, 0}, 1000, 100)));
 
         /** Task 21
          * Написать метод, который принимает на вход массив целых положительных
@@ -579,10 +565,10 @@ public class HW8 {
          */
         printTaskNumber(21);
 
-        System.out.println(Arrays.toString(arrayDiffTask21(new int[]{10,12,13,14,15})));
+        System.out.println(Arrays.toString(arrayDiffTask21(new int[]{10, 12, 13, 14, 15})));
         System.out.println(Arrays.toString(arrayDiffTask21(new int[]{})));
-        System.out.println(Arrays.toString(arrayDiffTask21(new int[]{0,2,4,6,7,3})));
-        System.out.println(Arrays.toString(arrayDiffTask21(new int[]{0,-2,4,-6,-7,3})));
+        System.out.println(Arrays.toString(arrayDiffTask21(new int[]{0, 2, 4, 6, 7, 3})));
+        System.out.println(Arrays.toString(arrayDiffTask21(new int[]{0, -2, 4, -6, -7, 3})));
 
 
         /** Task 22
@@ -595,8 +581,7 @@ public class HW8 {
         printTaskNumber(22);
 
 
-        System.out.println(Arrays.toString(arrayPhoneNumber(new int[]{1,8,0,0,1,2,35,4,5,6,7})));
-
+        System.out.println(Arrays.toString(arrayPhoneNumber(new int[]{1, 8, 0, 0, 1, 2, 35, 4, 5, 6, 7})));
 
 
         /** Task 23
@@ -605,12 +590,11 @@ public class HW8 {
          */
         printTaskNumber(23);
 
-        int [] array23 = {6,4,2,2,2};
+        int[] array23 = {6, 4, 2, 2, 2};
 
         System.out.println(Arrays.toString(arrayUniNumber(array23)));
-        System.out.println(Arrays.toString(arrayUniNumber(new int[]{1,1,1,1,1})));
-        System.out.println(Arrays.toString(arrayUniNumber(new int[]{6,5,4,8,5,4,4,6,3,9})));
-
+        System.out.println(Arrays.toString(arrayUniNumber(new int[]{1, 1, 1, 1, 1})));
+        System.out.println(Arrays.toString(arrayUniNumber(new int[]{6, 5, 4, 8, 5, 4, 4, 6, 3, 9})));
 
 
         /** Task 24
@@ -623,25 +607,25 @@ public class HW8 {
 
 
         System.out.println(Arrays.toString(quantityUniAndNotUniElements(new int[]{})));
-        System.out.println(Arrays.toString(quantityUniAndNotUniElements(new int[]{3,2,1,5,1,2,3})));
-        System.out.println(Arrays.toString(quantityUniAndNotUniElements(new int[]{1,1,1,1,1})));
-        System.out.println(Arrays.toString(quantityUniAndNotUniElements(new int[]{1,6,5,4,8,9})));
+        System.out.println(Arrays.toString(quantityUniAndNotUniElements(new int[]{3, 2, 1, 5, 1, 2, 3})));
+        System.out.println(Arrays.toString(quantityUniAndNotUniElements(new int[]{1, 1, 1, 1, 1})));
+        System.out.println(Arrays.toString(quantityUniAndNotUniElements(new int[]{1, 6, 5, 4, 8, 9})));
 
 
+        /** Task 25
+         *  Написать метод, который принимает на вход массив целых положительных
+         *  чисел, и 2 целых положительнх числа (значения индексов).
+         *  Метод возвращает массив, который содержит только числа из
+         *  первого массива в промежутке между индексами.
+         */
 
+        printTaskNumber(25);
 
-       /** Task 25
-        *  Написать метод, который принимает на вход массив целых положительных
-        *  чисел, и 2 целых положительнх числа (значения индексов).
-        *  Метод возвращает массив, который содержит только числа из
-        *  первого массива в промежутке между индексами.
-        */
-
-       printTaskNumber(25);
-
-       int [] array25 = {2,4,5,2,1,6,7,8,18};
-        System.out.println(Arrays.toString(task25(array25, 2 , 6)));;
-        System.out.println(Arrays.toString(task25(new int[]{0,1,2,3,4,5,6}, 1 , 5)));;
+        int[] array25 = {2, 4, 5, 2, 1, 6, 7, 8, 18};
+        System.out.println(Arrays.toString(task25(array25, 2, 6)));
+        ;
+        System.out.println(Arrays.toString(task25(new int[]{0, 1, 2, 3, 4, 5, 6}, 1, 5)));
+        ;
 
 
         /** Task 26
@@ -651,15 +635,11 @@ public class HW8 {
         printTaskNumber(26);
 
 
-        System.out.println(Arrays.toString(arrayUniElementsFromTwoArrays(array23,array25)));
-        System.out.println(Arrays.toString(arrayUniElementsFromTwoArrays(new int[]{10,11,9,5,3,3}, new int[]{5,9,8,7,10,3,1})));
-
-
+        System.out.println(Arrays.toString(arrayUniElementsFromTwoArrays(array23, array25)));
+        System.out.println(Arrays.toString(arrayUniElementsFromTwoArrays(new int[]{10, 11, 9, 5, 3, 3}, new int[]{5, 9, 8, 7, 10, 3, 1})));
 
 
     }
-
-
 
 
 }
