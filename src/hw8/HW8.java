@@ -26,7 +26,7 @@ public class HW8 {
 
     public static double[] arrayMulti(int[] array) {
         double[] array2 = new double[array.length];
-        if (array.length != 0) {
+        if (array.length > 0) {
             for (int i = 0; i < array.length; i++) {
                 array2[i] = array[i] * 2.5;
             }
@@ -37,7 +37,7 @@ public class HW8 {
 
     public static int quantityEvenNumbers(int[] array) {
         int count = 0;
-        if (array.length != 0) {
+        if (array.length > 0) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] > 0 && array[i] % 2 == 0) {
                     count++;
@@ -50,7 +50,7 @@ public class HW8 {
     public static int[] arrayOdd(int[] array) {
         int count = 0;
         int j = 0;
-        if (array.length != 0) {
+        if (array.length > 0) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] % 2 != 0) {
                     count++;
@@ -103,16 +103,15 @@ public class HW8 {
     public static int sumHalfArray(int[] array) {
         int sum = 0;
         int j;
-        if (array.length != 0) {
+        if (array.length > 0) {
             j = array.length / 2;
             for (int i = j; i < array.length; i++) {
                 sum += array[i];
             }
-        } else {
-            System.out.print("Array empty ");
+            return sum;
         }
 
-        return sum;
+        return Integer.MIN_VALUE;
     }
 
     public static int[] arrayEvenOdd(int[] array) {
