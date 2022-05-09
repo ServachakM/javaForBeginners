@@ -7,21 +7,18 @@ import static utils.Utils.*;
 public class HW8 {
 
     public static int[] fiveValue(int a1, int a2, int a3, int a4, int a5) {
-        int[] array = {a1, a2, a3, a4, a5};
 
-        return array;
+        return new int[]{a1, a2, a3, a4, a5};
     }
 
     public static double[] fiveValue(double a1, double a2, double a3, double a4, double a5) {
-        double[] array = {a1, a2, a3, a4, a5};
 
-        return array;
+        return new double[]{a1, a2, a3, a4, a5};
     }
 
     public static String[] fiveValue(String a1, String a2, String a3, String a4, String a5) {
-        String[] array = {a1, a2, a3, a4, a5};
 
-        return array;
+        return new String[]{a1, a2, a3, a4, a5};
     }
 
     public static double[] arrayMulti(int[] array) {
@@ -51,17 +48,17 @@ public class HW8 {
         int count = 0;
         int j = 0;
         if (array.length > 0) {
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] % 2 != 0) {
+            for (int k : array) {
+                if (k % 2 != 0) {
                     count++;
                 }
             }
         }
         int[] array2 = new int[count];
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 != 0) {
-                array2[j] = array[i];
+        for (int k : array) {
+            if (k % 2 != 0) {
+                array2[j] = k;
                 j++;
             }
         }
@@ -75,11 +72,7 @@ public class HW8 {
         if (array.length != 0) {
             for (int i = 0; i < array.length; i++) {
                 if (j < array.length) {
-                    if (array[i] > 10) {
-                        array2[j] = true;
-                    } else {
-                        array2[j] = false;
-                    }
+                    array2[j] = array[i] > 10;
                 }
                 j++;
             }
