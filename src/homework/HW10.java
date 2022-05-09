@@ -130,14 +130,14 @@ public class HW10 {
         return Boolean.FALSE;
     }
 
-    public static String quotes(String str){
-        if(str != null){
+    public static String quotes(String str) {
+        if (str != null) {
             str = str.trim();
-            if(str.length() > 0) {
+            if (str.length() > 0) {
                 String quo = "'";
                 String tes = ".'";
 
-                return  quo.concat(str).concat(tes);
+                return quo.concat(str).concat(tes);
             }
 
             return "Строка пустая или состоит с пробелов";
@@ -146,10 +146,10 @@ public class HW10 {
         return "";
     }
 
-    public static String correctName(String name){
-        if(name != null){
+    public static String correctName(String name) {
+        if (name != null) {
             name = name.trim();
-            if(name.length() > 0){
+            if (name.length() > 0) {
                 name = name.substring(0, 1).toUpperCase().concat(name.substring(1).toLowerCase());
 
                 return name;
@@ -184,10 +184,10 @@ public class HW10 {
         return "";
     }
 
-    public static boolean ifStartAndEndLetterTheSame(String str){
-        if(str != null){
+    public static boolean ifStartAndEndLetterTheSame(String str) {
+        if (str != null) {
             str = str.trim();
-            if(str.length() > 0){
+            if (str.length() > 0) {
                 str = str.toLowerCase();
 
                 return str.charAt(0) == str.charAt(str.length() - 1);
@@ -197,24 +197,64 @@ public class HW10 {
         return false;
     }
 
-    public static String[] replaceToArray(String str){
-        if(str != null){
+    public static String[] replaceToArray(String str) {
+        if (str != null) {
             str = str.trim();
-            if(str.length() > 0){
-                String[] array = str.split(" ");
+            if (str.length() > 0) {
 
-                return array;
+                return str.split(" ");
             }
         }
 
         return new String[]{};
     }
 
+    public static String[] fIOInArray(String str) {
 
+        String[] array = replaceToArray(str);
+        array[0] = "Имя: ".concat(array[0]);
+        array[1] = "Отчество: ".concat(array[1]);
+        array[2] = "Фамилия: ".concat(array[2]);
 
+        return array;
+    }
 
+    public static int sumOfTheLetters(String str) {
+        if (str != null) {
+            str = str.trim();
+            if (str.length() > 0) {
+                int sum = 0;
+                for (int i = 0; i < str.length(); i++) {
+                    if (str.charAt(i) > 64) {
+                        sum += str.charAt(i);
+                    } else {
 
-    public static void main (String[]args){
+                        return 0;
+                    }
+                }
+
+                return sum;
+            }
+        }
+
+        return 0;
+    }
+
+    public static boolean firstLetterFasterSecond(String first, String second) {
+
+        if (first != null && second != null) {
+            first = first.trim().toLowerCase();
+            second = second.trim().toLowerCase();
+            if (first.length() > 0 && second.length() > 0) {
+
+                return first.charAt(0) < second.charAt(0);
+            }
+        }
+
+        return false;
+    }
+
+        public static void main (String[]args){
 //        System.out.println("        happy birthday!  ");
 //        System.out.println(capitalizeWords("        happy birthday!  "));
 //        System.out.println(capitalizeWords(""));
@@ -227,191 +267,228 @@ public class HW10 {
  * Task1
  *  Методы isEmpty(), length(), trim(), replace()
  */
-        printTaskNumber(1);
+            printTaskNumber(1);
 
-        String sentencePlusSpace = "    QA   4Everyone   ";
-        String sentenceWithoutSpace = "QAAutomation4Everyone";
-        String sentenceEmpty = "";
+            String sentencePlusSpace = "    QA   4Everyone   ";
+            String sentenceWithoutSpace = "QAAutomation4Everyone";
+            String sentenceEmpty = "";
 
-        System.out.println(qA4EveryOne(sentencePlusSpace));
-        System.out.println(qA4EveryOne(sentenceWithoutSpace));
-        System.out.println(qA4EveryOne(sentenceEmpty));
+            System.out.println(qA4EveryOne(sentencePlusSpace));
+            System.out.println(qA4EveryOne(sentenceWithoutSpace));
+            System.out.println(qA4EveryOne(sentenceEmpty));
 
 /** Task 2
  * Написать алгоритм RemoveAlla
  */
-        printTaskNumber(2);
+            printTaskNumber(2);
 
-        String qa = "    QA4Everyone   ";
-        String panda = "panda   ";
+            String qa = "    QA4Everyone   ";
+            String panda = "panda   ";
 
-        System.out.println(removeAlla(qa));
-        System.out.println(removeAlla(panda));
-        System.out.println(removeAlla(sentenceEmpty));
-
-
-        /** Task 3
-         * Написать алгоритм RemoveAllZeros
-         */
-        printTaskNumber(3);
-
-        String numbers = "   3 5 0 4 2 0 9 7 0 6 0 4 0       0 0 0 ";
-        String numbers2 = " 0000000111";
+            System.out.println(removeAlla(qa));
+            System.out.println(removeAlla(panda));
+            System.out.println(removeAlla(sentenceEmpty));
 
 
-        System.out.println(removeAllZeros(numbers2));
-        System.out.println(removeAllZeros(numbers));
+            /** Task 3
+             * Написать алгоритм RemoveAllZeros
+             */
+            printTaskNumber(3);
+
+            String numbers = "   3 5 0 4 2 0 9 7 0 6 0 4 0       0 0 0 ";
+            String numbers2 = " 0000000111";
 
 
-        /** Task 4
-         *  Написать алгоритм RemoveAllSpaces.
-         */
-
-        printTaskNumber(4);
-
-        String phrase = "    QA   4  Everyone   ";
-        String phrase2 = "p a     n d a   ";
-        String test = "   ";
-
-        System.out.println(removeAllSpaces(phrase));
-        System.out.println(removeAllSpaces(phrase2));
+            System.out.println(removeAllZeros(numbers2));
+            System.out.println(removeAllZeros(numbers));
 
 
-        /** Task 5
-         *  Напишите метод, который принимает на вход строку и считает,
-         *  сколько букв а или А содержится в строке.
-         */
-        printTaskNumber(5);
+            /** Task 4
+             *  Написать алгоритм RemoveAllSpaces.
+             */
 
-        String abra = "Abra cada bra";
-        String hom = "Homenum Revelio";
-        String empty = "";
+            printTaskNumber(4);
 
-        System.out.println(countLetterA(abra));
-        System.out.println(countLetterA(hom));
-        System.out.println(countLetterA(empty));
-        System.out.println(countLetterA(null));
+            String phrase = "    QA   4  Everyone   ";
+            String phrase2 = "p a     n d a   ";
+            String test = "   ";
+
+            System.out.println(removeAllSpaces(phrase));
+            System.out.println(removeAllSpaces(phrase2));
 
 
-        /** Task 6
-         * Напишите метод, который принимает на вход текст и проверяет,
-         * содержится ли в тексте хотя бы одно слово Java.
-         */
-        printTaskNumber(6);
+            /** Task 5
+             *  Напишите метод, который принимает на вход строку и считает,
+             *  сколько букв а или А содержится в строке.
+             */
+            printTaskNumber(5);
 
-        String text1 = "As of March 2022, Java 18 is" +
-                " the latest version, while Java 17, 11 and 8 are the" +
-                " current long-term support (LTS) versions. " +
-                "Oracle released the last zero-cost public update for the " +
-                "legacy version Java 8 LTS in January 2019 for commercial " +
-                "use, although it will otherwise still support Java 8 with" +
-                " public updates for personal use indefinitely." +
-                " Other vendors have begun to offer zero-cost builds of " +
-                "OpenJDK 8 and 11 that are still receiving security and " +
-                "other upgrades";
-        String text2 = "As a decrepit father takes delight\n" +
-                "To see his active child do deeds of youth,\n" +
-                "So I, made lame by fortune’s dearest spite,\n" +
-                "Take all my comfort of thy worth and truth.\n" +
-                "For whether beauty, birth, or wealth, or wit,\n" +
-                "Or any of these all, or all, or more,\n" +
-                "Entitled in thy parts do crownèd sit,\n" +
-                "I make my love engrafted to this store.\n" +
-                "So then I am not lame, poor, nor despised,\n" +
-                "Whilst that this shadow doth such substance give\n" +
-                "That I in thy abundance am sufficed,\n" +
-                "And by a part of all thy glory live.\n" +
-                "Look what is best, that best I wish in thee.\n" +
-                "This wish I have; then ten times happy me.";
+            String abra = "Abra cada bra";
+            String hom = "Homenum Revelio";
+            String empty = "";
 
-        System.out.println(isTextIncludeJava(text1));
-        System.out.println(isTextIncludeJava(""));
-        System.out.println(isTextIncludeJava(null));
-        System.out.println(isTextIncludeJava(text2));
+            System.out.println(countLetterA(abra));
+            System.out.println(countLetterA(hom));
+            System.out.println(countLetterA(empty));
+            System.out.println(countLetterA(null));
 
 
-        /** Task 7
-         *  Напишите метод, который принимает на вход строку, и добавляет
-         *  Кавычки в начале строки, точку и кавычки в конце строки с помощью
-         *  метода concat()
-         */
-        printTaskNumber(7);
+            /** Task 6
+             * Напишите метод, который принимает на вход текст и проверяет,
+             * содержится ли в тексте хотя бы одно слово Java.
+             */
+            printTaskNumber(6);
 
-        String sentence = "One";
-        String sentence2 = "    TWO  ";
+            String text1 = "As of March 2022, Java 18 is" +
+                    " the latest version, while Java 17, 11 and 8 are the" +
+                    " current long-term support (LTS) versions. " +
+                    "Oracle released the last zero-cost public update for the " +
+                    "legacy version Java 8 LTS in January 2019 for commercial " +
+                    "use, although it will otherwise still support Java 8 with" +
+                    " public updates for personal use indefinitely." +
+                    " Other vendors have begun to offer zero-cost builds of " +
+                    "OpenJDK 8 and 11 that are still receiving security and " +
+                    "other upgrades";
+            String text2 = "As a decrepit father takes delight\n" +
+                    "To see his active child do deeds of youth,\n" +
+                    "So I, made lame by fortune’s dearest spite,\n" +
+                    "Take all my comfort of thy worth and truth.\n" +
+                    "For whether beauty, birth, or wealth, or wit,\n" +
+                    "Or any of these all, or all, or more,\n" +
+                    "Entitled in thy parts do crownèd sit,\n" +
+                    "I make my love engrafted to this store.\n" +
+                    "So then I am not lame, poor, nor despised,\n" +
+                    "Whilst that this shadow doth such substance give\n" +
+                    "That I in thy abundance am sufficed,\n" +
+                    "And by a part of all thy glory live.\n" +
+                    "Look what is best, that best I wish in thee.\n" +
+                    "This wish I have; then ten times happy me.";
 
-        System.out.println(quotes(sentence));
-        System.out.println(quotes(sentence2));
-        System.out.println(quotes("  H E L L O "));
-        System.out.println(quotes("   "));
-        System.out.println(quotes(null));
-
-
-        /** Task 8
-         * Напишите метод, кторый принимает на вход название города и
-         * исправляет написание:
-         */
-        printTaskNumber(8);
-
-        String city = "ташкент";
-        String city2 = "ЧикаГО";
-
-        System.out.println(correctName(city));
-        System.out.println(correctName(city2));
-        System.out.println(correctName("  "));
-        System.out.println(correctName(null));
-
-
-        /** Task 9
-         * Напишите метод, который принимает на вход строку, и возвращает все,
-         * что находится между первой и последней буквой-параметром
-         */
-        printTaskNumber(9);
-
-        String str = "Abracadabra";
-        String letter = "b";
-        String str2 = "Whippersnapper";
-        String letter2 = "p";
-
-        System.out.println(betweenLetterParam(str, letter));
-        System.out.println(betweenLetterParam(str2, "e"));
-        System.out.println(betweenLetterParam("", letter2));
-        System.out.println(betweenLetterParam(str, letter2));
-        System.out.println(betweenLetterParam(str2, null));
+            System.out.println(isTextIncludeJava(text1));
+            System.out.println(isTextIncludeJava(""));
+            System.out.println(isTextIncludeJava(null));
+            System.out.println(isTextIncludeJava(text2));
 
 
-        /** Task 10
-         * Напишите метод, который принимает на вход слово, и возвращает true,
-         * если слово начинается и заканчивается на одинаковую букву, и
-         * false иначе
-         */
-        printTaskNumber(10);
+            /** Task 7
+             *  Напишите метод, который принимает на вход строку, и добавляет
+             *  Кавычки в начале строки, точку и кавычки в конце строки с помощью
+             *  метода concat()
+             */
+            printTaskNumber(7);
 
-        System.out.println(ifStartAndEndLetterTheSame(str));
-        System.out.println(ifStartAndEndLetterTheSame(str2));
-        System.out.println(ifStartAndEndLetterTheSame(""));
+            String sentence = "One";
+            String sentence2 = "    TWO  ";
 
-
-        /** Task 11
-         * Напишите метод, который принимает на вход предложение и возвращает
-         * слова из этого предложения в виде массива слов
-         */
-        printTaskNumber(11);
-
-        String sent = "QA for Everyone";
-        String pushkin = "Александр Сергеевич Пушкин";
-
-        System.out.println(Arrays.toString(replaceToArray(sent)));
-        System.out.println(Arrays.toString(replaceToArray(pushkin)));
-        System.out.println(Arrays.toString(replaceToArray("")));
-
-        /** Task 12
-         * Написать метод, который принимает на вход предложение,
-         * которое состоит из имени, фамилии, отчества и возвращает
-         * массив строк:
-         */
-        printTaskNumber(12);
+            System.out.println(quotes(sentence));
+            System.out.println(quotes(sentence2));
+            System.out.println(quotes("  H E L L O "));
+            System.out.println(quotes("   "));
+            System.out.println(quotes(null));
 
 
+            /** Task 8
+             * Напишите метод, кторый принимает на вход название города и
+             * исправляет написание:
+             */
+            printTaskNumber(8);
+
+            String city = "ташкент";
+            String city2 = "ЧикаГО";
+
+            System.out.println(correctName(city));
+            System.out.println(correctName(city2));
+            System.out.println(correctName("  "));
+            System.out.println(correctName(null));
+
+
+            /** Task 9
+             * Напишите метод, который принимает на вход строку, и возвращает все,
+             * что находится между первой и последней буквой-параметром
+             */
+            printTaskNumber(9);
+
+            String str = "Abracadabra";
+            String letter = "b";
+            String str2 = "Whippersnapper";
+            String letter2 = "p";
+
+            System.out.println(betweenLetterParam(str, letter));
+            System.out.println(betweenLetterParam(str2, "e"));
+            System.out.println(betweenLetterParam("", letter2));
+            System.out.println(betweenLetterParam(str, letter2));
+            System.out.println(betweenLetterParam(str2, null));
+
+
+            /** Task 10
+             * Напишите метод, который принимает на вход слово, и возвращает true,
+             * если слово начинается и заканчивается на одинаковую букву, и
+             * false иначе
+             */
+            printTaskNumber(10);
+
+            System.out.println(ifStartAndEndLetterTheSame(str));
+            System.out.println(ifStartAndEndLetterTheSame(str2));
+            System.out.println(ifStartAndEndLetterTheSame(""));
+
+
+            /** Task 11
+             * Напишите метод, который принимает на вход предложение и возвращает
+             * слова из этого предложения в виде массива слов
+             */
+            printTaskNumber(11);
+
+            String sent = "QA for Everyone";
+            String pushkin = "Александр Сергеевич Пушкин";
+
+            System.out.println(Arrays.toString(replaceToArray(sent)));
+            System.out.println(Arrays.toString(replaceToArray(pushkin)));
+            System.out.println(Arrays.toString(replaceToArray("")));
+
+            /** Task 12
+             * Написать метод, который принимает на вход предложение,
+             * которое состоит из имени, фамилии, отчества и возвращает
+             * массив строк:
+             */
+            printTaskNumber(12);
+
+            String fio = "    Иван Иваныч Иванов   ";
+
+            System.out.println(Arrays.toString(fIOInArray(pushkin)));
+            System.out.println(Arrays.toString(fIOInArray(fio)));
+
+
+            /** Task 13
+             * Написать метод, который возвращает сумму всех букв слова
+             */
+            printTaskNumber(13);
+
+            String abc = "abc";
+            String aBC = "ABC";
+            String num = "123";
+
+            System.out.println(sumOfTheLetters(abc));
+            System.out.println(sumOfTheLetters(aBC));
+            System.out.println(sumOfTheLetters(num));
+            System.out.println(sumOfTheLetters("Maria"));
+
+
+            /** Task 14
+             * Написать метод,  который принимает на вход 2 буквы и
+             * возвращает true, если первая буква встречается раньше второй,
+             * иначе метод возвращает false
+             */
+            printTaskNumber(14);
+
+            String first = "a";
+            String second = "m";
+
+
+            System.out.println(firstLetterFasterSecond(first, second));
+            System.out.println(firstLetterFasterSecond("m", "l"));
+            System.out.println(firstLetterFasterSecond("   f", "eeee"));
+            System.out.println(firstLetterFasterSecond("H", "e"));
+
+
+        }
     }
-}
